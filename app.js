@@ -7,17 +7,17 @@ function playChord() {
     case 1:
       console.log("A");
       aChord();
-      setTimeout("window.alert('A!')", 5000);
+      setTimeout("alert('A!')", 5000);
       break;
     case 2:
       console.log("D");
       dChord();
-      setTimeout("window.alert('D!')", 5000);
+      setTimeout("alert('D!')", 5000);
       break;
     case 3:
       console.log("E");
       eChord();
-      setTimeout("window.alert('E!')", 5000);
+      setTimeout("alert('E!')", 5000);
       break;
     default:
   }
