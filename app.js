@@ -1,98 +1,141 @@
-document.addEventListener("keydown", playChord);
-setTimeout("alert('Hello')");
+//document.addEventListener("keydown", playChord);
+//setTimeout("alert('Hello')");
 
 var chordAudio = null;
 var chordSymbol = null;
+var isPlayPressed = false;
+var lastChord = null;
+var isChordPressed = false;
 
 function playChord() {
-  let randomNumber = Math.floor(((Math.random() * 6))) + 1;
+  let randomNumber = Math.floor(((Math.random() * 8))) + 1;
+  isPlayPressed = true;
+  isChordPressed = true;
 
   switch (randomNumber) {
     case 1:
-      console.log("D");
-      chordAudio = new Audio("sounds/dmajor.mp3");
-      chordSymbol = "D Major!";
-      dMajorChord();
-      setTimeout("alert('D!')", 5000);
+      aMinorChord();
       break;
     case 2:
-      console.log("A");
-      chordAudio = new Audio("sounds/amajor.mp3");
-      chordSymbol = "A Major!";
-      aMajorChord();
-      setTimeout("alert('A!')", 5000);
+      dMinorChord();
       break;
     case 3:
-      console.log("E");
-      chordAudio = new Audio("sounds/emajor.mp3");
-      chordSymbol = "E Major!";
-      eMajorChord();
-      setTimeout("alert('E!')", 5000);
+      eMinorChord();
       break;
     case 4:
-      console.log("D minor");
-      chordAudio = new Audio("sounds/dminor.mp3");
-      chordSymbol = "D minor!";
-      dMinorChord();
-      setTimeout("alert('D minor!')", 5000);
+      aMajorChord();
       break;
     case 5:
-      console.log("A minor");
-      chordAudio = new Audio("sounds/aminor.mp3");
-      chordSymbol = "A minor!";
-      aMinorChord();
-      setTimeout("alert('A minor!')", 5000);
+      cMajorChord();
       break;
     case 6:
-      console.log("E minor");
-      chordAudio = new Audio("sounds/eminor.mp3");
-      chordSymbol = "E minor!";
-      eMinorChord();
-      setTimeout("alert('E minor!')", 5000);
+      dMajorChord();
+      break;
+    case 7:
+      eMajorChord();
+      break;
+    case 8:
+      gMajorChord();
       break;
     default:
+      isPlayPressed = false;
   }
 }
 
+
 function previousChord(){
-let previousChord = chordAudio;
-if(previousChord != null){
-previousChord.play();
-setTimeout("alert('" + chordSymbol + "')", 5000);
-}else{
-alert("No chord played yet");
+  if(isPlayPressed){
+    lastChord = chordAudio;
+  }
+  if(lastChord != null){
+    lastChord.play();
+    popUpMessage();
+  }else{
+    alert("No chord played yet");
+  }
 }
+
+
+function popUpMessage(){
+  if(isPlayPressed){
+    setTimeout("alert('" + chordSymbol + "')", 1000);
+    isChordPressed = false;
+  }
 }
 
 
 function aMinorChord() {
-  let a = new Audio("sounds/aminor.mp3");
-  a.play();
+  chordAudio = new Audio("sounds/aminor.mp3");
+  chordAudio.play();
+  chordSymbol = "A minor!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
 }
 
 function dMinorChord() {
-  let d = new Audio("sounds/dminor.mp3");
-  d.play();
+  chordAudio = new Audio("sounds/dminor.mp3");
+  chordAudio.play();
+  chordSymbol = "D minor!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
 }
 
 function eMinorChord() {
-  let e = new Audio("sounds/eminor.mp3");
-  e.play();
+  chordAudio = new Audio("sounds/eminor.mp3");
+  chordAudio.play();
+  chordSymbol = "E minor!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
 }
 
 
 
 function aMajorChord() {
-  let A = new Audio("sounds/amajor.mp3");
-  A.play();
+  chordAudio = new Audio("sounds/amajor.mp3");
+  chordAudio.play();
+  chordSymbol = "A major!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
+}
+
+function cMajorChord() {
+  chordAudio = new Audio("sounds/cmajor.mp3");
+  chordAudio.play();
+  chordSymbol = "C major!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
 }
 
 function dMajorChord() {
-  let D = new Audio("sounds/dmajor.mp3");
-  D.play();
+  chordAudio = new Audio("sounds/dmajor.mp3");
+  chordAudio.play();
+  chordSymbol = "D major!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
 }
 
 function eMajorChord() {
-  let E = new Audio("sounds/emajor.mp3");
-  E.play();
+  chordAudio = new Audio("sounds/emajor.mp3");
+  chordAudio.play();
+  chordSymbol = "E major!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
 }
+
+function gMajorChord() {
+  chordAudio = new Audio("sounds/gmajor.mp3");
+  chordAudio.play();
+  chordSymbol = "G major!";
+  if(isChordPressed){
+     popUpMessage(); 
+  }
+}
+
+

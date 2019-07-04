@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Guitar</title>
+  <title>Guitar Ear Training</title>
 </head>
 
 <body>
 
-  <h1>Press any key or click on "Play"</h1>
+  <h1>Click on "Play"</h1>
   <h6>Answer will pop up in 5 seconds</h6>
   <button type="button" name="button" onClick="playChord()">Play</button>
 
@@ -22,13 +22,21 @@
   <h4>For reference</h4>
 
   <!-Majors->
-  <button type="button" name="button" onClick=dMajorChord()>D</button>
+  <label>Majors</label>
+  <br/>
   <button type="button" name="button" onClick=aMajorChord()>A</button>
+  <button type="button" name="button" onClick=cMajorChord()>C</button>
+  <button type="button" name="button" onClick=dMajorChord()>D</button>
   <button type="button" name="button" onClick=eMajorChord()>E</button>
+  <button type="button" name="button" onClick=gMajorChord()>G</button>
+  <br/>
+  <br/>
 
   <!-minors->
-  <button type="button" name="button" onClick=dMinorChord()>Dm</button>
+  <label>Minors</label>
+  <br/>
   <button type="button" name="button" onClick=aMinorChord()>Am</button>
+  <button type="button" name="button" onClick=dMinorChord()>Dm</button>
   <button type="button" name="button" onClick=eMinorChord()>Em</button>
 
   <script type="text/javascript" src="app.js"></script>
